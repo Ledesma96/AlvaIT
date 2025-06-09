@@ -228,24 +228,28 @@ body, html{
       border-bottom: 0.5 solid $primary-color;
     }
   }
-  a{
-    width: 90%;
-    margin-top: 32px;
-    padding: 8px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: $primary-color;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    h3{
-      margin-top: 4px;
-    }
-    p{
-      margin-top: 8px;
-      text-align: center;
-      color: gray;
+  div{
+    width: 100%;
+    a{
+      width: 90%;
+      margin: auto;
+      margin-top: 32px;
+      padding: 8px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $primary-color;
+      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+      h3{
+        margin-top: 4px;
+      }
+      p{
+        margin-top: 8px;
+        text-align: center;
+        color: gray;
+      }
     }
   }
 }
