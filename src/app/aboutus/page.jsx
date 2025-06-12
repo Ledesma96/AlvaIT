@@ -1,4 +1,8 @@
 import { FaCode, FaLightbulb, FaPaintBrush, FaUsers } from 'react-icons/fa';
+import { metadata } from "../layout";
+metadata.title = 'Nosotros | Tu Socio en Transformación Digital';
+metadata.description = 'Somos un equipo de desarrolladores, diseñadores y expertos en SEO apasionados por crear soluciones digitales que marcan la diferencia. Conocé nuestra historia y valores.';
+metadata.keywords = 'nosotros agencia de software, equipo de desarrollo, desarrolladores web, expertos en SEO, diseñadores UX/UI, innovación tecnológica, transformación digital'
 
 export default function AboutSection() {
     return (
