@@ -1,9 +1,10 @@
+import Link from "next/link"
 
 const Logo = () => {
     return (
-        <div className="container-logo w-[10%]">
+        <Link href='/' className="container-logo w-[10%]">
             <img className="w-full" src="/logo.png" alt='logo AlvaIT'/>
-        </div>
+        </Link>
     )
 }
 

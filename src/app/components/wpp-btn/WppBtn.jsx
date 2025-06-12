@@ -2,6 +2,7 @@
 'use client'
 
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 
 const WppBtn = () => {
@@ -23,7 +24,7 @@ const WppBtn = () => {
     }, [])
 
     return (
-        <div className={`btn-wpp-container ${pushedUp ? 'pushed' : ''}`}>
+        <Link href='https://wa.me/+5491164323570?text=Hola,%20quisiera%20realizar%20una%20consulta.' className={`btn-wpp-container ${pushedUp ? 'pushed' : ''}`} target="_blank">
         <Image
             src='/WhatsApp.svg.png'
             width={60}
@@ -31,7 +32,7 @@ const WppBtn = () => {
             alt='Botón de acceso a WhatsApp'
             className="btn-wpp"
         />
-        </div>
+        </Link>
     )
 }
 

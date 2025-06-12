@@ -1,7 +1,7 @@
 
 const Copy = () => {
     return (
-        <div>
+        <div className="copy">
             <p>COPYRIGHT 2025 | Desarrollado por Alva IT</p>
         </div>
     )

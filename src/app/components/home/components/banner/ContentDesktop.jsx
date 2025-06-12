@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 const ContentDesktop = () => {
     return (
@@ -11,12 +12,12 @@ const ContentDesktop = () => {
             <br /> <span className="">Futuro digital en tus manos.</span>
             </p>
             <div className="container-btns">
-                <button className="start">
+                <Link href='https://wa.me/+5491164323570?text=Hola,%20estoy%20interesado%20en%20realizar%20mi%20proyecto.' target="_blank">
                     Empezar proyecto
-                </button>
-                <button className="services">
-                    Ver servicios
-                </button>
+                </Link>
+                <Link href='/pricing'>
+                    Ver planes
+                </Link>
             </div>
         </div>
     )

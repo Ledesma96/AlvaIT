@@ -1,9 +1,11 @@
-@import 'constants';
-@import "tailwindcss";
+@use 'constants' as c;
+@use 'tailwindcss';
+
+
 
 @layer components{
   .bg-secondary{
-    background-color: $secondary-color;
+    background-color: c.$secondary-color;
   }
 }
 
@@ -19,6 +21,42 @@ body, html{
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+//loader
+.container-loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top-color: c.$primary-color; // tu color primario
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: c.$primary-color;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 //wpp-btn
 .btn-wpp-container {
@@ -40,7 +78,7 @@ body, html{
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: $primary-color;
+  background-color: c.$primary-color;
   z-index: 999;
 
   .container_logo{
@@ -89,7 +127,7 @@ body, html{
     top: 80px;
     width: 50%;
     height: calc(100vh - 80px);
-    background-color: $primary-color;
+    background-color: c.$primary-color;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,7 +145,7 @@ body, html{
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      border-bottom: 0.5px solid $secondary-color;
+      border-bottom: 0.5px solid c.$secondary-color;
       p{
         margin-left: 8px;
       }
@@ -116,12 +154,12 @@ body, html{
       position: relative;
       width: 90%;
       height: 40px;
-      background-color: $tertiary-color;
+      background-color: c.$tertiary-color;
       border: none;
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
       padding-left: 16px;
-      color: $primary-color;
+      color: c.$primary-color;
       &::before{
         content: '';
         position: absolute;
@@ -129,7 +167,7 @@ body, html{
         height: 100%;
         top: 0;
         left: 0;
-        background-color: $secondary-color;
+        background-color: c.$secondary-color;
       }
     }
   }
@@ -193,7 +231,7 @@ body, html{
       color: white;
     }
     span{
-      color: $secondary-color;
+      color: c.$secondary-color;
     }
 
     .slogan{
@@ -225,7 +263,7 @@ body, html{
     font-size: 1.9rem;
     margin-top: 16px;
     span{
-      border-bottom: 0.5 solid $primary-color;
+      border-bottom: 0.5 solid c.$primary-color;
     }
   }
   div{
@@ -240,7 +278,7 @@ body, html{
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: $primary-color;
+      color: c.$primary-color;
       box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
       h3{
         margin-top: 4px;
@@ -262,7 +300,7 @@ body, html{
     text-align: center;
     letter-spacing: 2px;
     span{
-      border-bottom: 0.5px solid $primary-color;
+      border-bottom: 0.5px solid c.$primary-color;
     }
   }
   .container-image{
@@ -286,7 +324,7 @@ body, html{
         align-items: center;
         margin-bottom: 32px;
         padding-bottom: 24px;
-        border-bottom: 0.5px solid $primary-color;
+        border-bottom: 0.5px solid c.$primary-color;
         span{
           position: absolute;
           width: 25px;
@@ -295,7 +333,7 @@ body, html{
           left: 50%;
           transform: translateX(-50%);
           border-radius: 50%;
-          background-color: $primary-color;
+          background-color: c.$primary-color;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -312,7 +350,7 @@ body, html{
           justify-content: center;
           align-items: flex-end;
           h4{
-            color: $primary-color;
+            color: c.$primary-color;
           }
           p{
             margin-top: 6px;
@@ -434,12 +472,13 @@ body, html{
 
 //servicePage
 .servicePage {
-  width: 98%;
-  margin: 8px 16px 8px 8px;
+  width: 100vw;
+  margin: 16px 0px;
   color: #fff;
   background-color: #003432;
 
   .imageContainer {
+    margin: auto;
     position: relative;
     height: 300px;
 
@@ -492,7 +531,7 @@ body, html{
 .footer{
   width: 100%;
   padding: 16px;
-  background-color: $primary-color;
+  background-color: c.$primary-color;
 
   div{
     margin-top: 32px;
@@ -513,15 +552,16 @@ body, html{
     align-items: center;
     p{
       font-size: 0.5rem;
-      color: $secondary-color;
+      color: c.$secondary-color;
     }
   }
 
   section{
-    margin-top: 16px;
+    margin-bottom: 16px;
     h4{
-      color: $secondary-color;
+      color: white;
       margin-bottom: 16px;
+      font-weight: 700;
     }
     a{
       margin-top: 6px;
@@ -529,7 +569,7 @@ body, html{
       flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start;
-      color: $secondary-color;
+      color: white;
       text-decoration: none;
       svg{
         margin-bottom: 6px;
@@ -539,13 +579,15 @@ body, html{
         margin-left: 8px;
       }
     }
+    a:hover{
+      cursor: pointer;
+    }
   }
   section:nth-child(3){
     a{
       svg{
         width: 40px;
         height: 40px;
-        color: #1877F2;
       }
     }
   }
@@ -553,7 +595,7 @@ body, html{
 
 //contact
 .container-contact{
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/photo-1477959858617-67f85cf4f1df.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -587,9 +629,11 @@ body, html{
     }
   }
   .container-form{
-    height: 95%;
+    position: relative;
+    height: 100%;
     margin: 0 auto;
     margin-bottom: 32px;
+    padding-bottom: 32px;
     grid-row: 2;
     width: 90%;
     display: flex;
@@ -597,6 +641,9 @@ body, html{
     justify-content: flex-start;
     align-items: center;
     background-color: white;
+    .container-loader{
+      margin-top: 32px;
+    }
     h4{
       font-size: 1.5rem;
       margin: 16px;
@@ -618,35 +665,36 @@ body, html{
           width: 100%;
           height: 100%;
           border: none;
-          border-bottom: 0.5px solid $primary-color;
+          border-bottom: 0.5px solid c.$primary-color;
           outline: none;
           padding: 16px;
         }
+        textArea{
+          margin-bottom: 16px;
+        }
         input:focus + label, textArea:focus + label{
-          top: -5px;
+          top: -8px;
           left: 8px;
           font-size: 0.6rem;
           transition: all 0.3s ease-in-out;
         }
         .up{
-          top: -5px;
+          top: -8px;
           left: 8px;
           font-size: 0.6rem;
         }
       }
       .btn{
+        margin: 32px 0px;
         width: 40%;
-        margin-top: -16px;
+        height: 50px;
         border: none;
         border-radius: 6px;
-        background-color: $primary-color;
+        background-color: c.$primary-color;
         display: flex;
         justify-content: center;
         align-items: center;
-        p{
-          color: white;
-          text-align: center;
-        }
+        color: white;
       }
     }
   }
@@ -694,7 +742,7 @@ body, html{
 
   .pricing-card {
     background-color: white;
-    border: 1px solid $tertiary-color;
+    border: 1px solid c.$tertiary-color;
     border-radius: 12px;
     width: 300px;
     padding: 2rem;
@@ -705,12 +753,12 @@ body, html{
 
     &:hover {
       transform: translateY(-5px);
-      border-color: $secondary-color;
+      border-color: c.$secondary-color;
     }
 
     .plan-name {
       font-size: 1.5rem;
-      color: $primary-color;
+      color: c.$primary-color;
       margin-bottom: 0.5rem;
     }
 
@@ -733,7 +781,7 @@ body, html{
 
         &::before {
           content: '✔';
-          color: $secondary-color;
+          color: c.$secondary-color;
           position: absolute;
           left: 0;
         }
@@ -742,7 +790,7 @@ body, html{
 
     .plan-price {
       font-size: 1.1rem;
-      color: $primary-color;
+      color: c.$primary-color;
       font-weight: bold;
       display: flex;
       flex-direction: column;
@@ -752,8 +800,8 @@ body, html{
     .plan-contacto {
       font-size: 1rem;
       font-weight: 500;
-      color: $primary-color;
-      background-color: $tertiary-color;
+      color: c.$primary-color;
+      background-color: c.$tertiary-color;
       padding: 0.5rem 1rem;
       border-radius: 6px;
       display: inline-block;
@@ -794,7 +842,7 @@ body, html{
 
     .about-title {
       font-size: 2.5rem;
-      color: $primary-color;
+      color: c.$primary-color;
       margin-bottom: 1rem;
     }
 
@@ -814,7 +862,7 @@ body, html{
     .features-title {
       font-size: 1.8rem;
       font-weight: 600;
-      color: $primary-color;
+      color: c.$primary-color;
       margin-bottom: 1.2rem;
     }
 
@@ -826,7 +874,7 @@ body, html{
       margin-bottom: 1rem;
 
       .icon {
-        color: $primary-color;
+        color: c.$primary-color;
         margin-right: 0.75rem;
         font-size: 1.3rem;
       }
@@ -890,14 +938,14 @@ body, html{
 @media (min-width: 1024px){
   //navbarDesktop
   .container-nav-desk{
-    background-color: $primary-color;
+    background-color: c.$primary-color;
     padding: 0px 32px;
     .container-options{
       a{
         color: white;
         font-weight: 800;
         span{
-          color: $secondary-color;
+          color: c.$secondary-color;
         }
       }
     }
@@ -930,12 +978,22 @@ body, html{
         margin-top: 32px;
         display: flex;
         justify-content: space-between;
-        .start, .services{
+        a{
           width: 40%;
           height: 40px;
           border-radius: 6px;
           color: white;
-          background-color: $tertiary-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: c.$tertiary-color;
+          transition: all 0.2s ease-in-out;
+        }
+        a:hover{
+          cursor: pointer;
+          background-color: c.$secondary-color;
+          color: c.$primary-color;
+          transition: all 0.2s ease-in-out;
         }
       }
     }

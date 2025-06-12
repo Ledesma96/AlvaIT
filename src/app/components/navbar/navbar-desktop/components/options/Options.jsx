@@ -12,7 +12,7 @@ const navItems = [
 const Options = () => {
     const pathname = usePathname();
     return (
-        <div className="flex justify-around w-[50%] container-options">
+        <div className="flex justify-around w-[35%] container-options">
             {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (

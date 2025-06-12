@@ -6,7 +6,7 @@ const CallToAction = () => {
       <div className="cta-content">
         <h2>¿Listo para llevar tu proyecto al siguiente nivel?</h2>
         <p>Transforma tus ideas en realidad digital con <strong>Alva</strong>.</p>
-        <Link href="/contacto" className="cta-button">Contáctanos</Link>
+        <Link href="/contact" className="cta-button">Contáctanos</Link>
       </div>
     </section>
   );

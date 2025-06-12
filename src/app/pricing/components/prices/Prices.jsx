@@ -1,5 +1,7 @@
 'use client';
 
+import Link from "next/link";
+
 const plans = [
   {
     name: 'Inicial',
@@ -66,7 +68,7 @@ export default function Prices() {
                 <span>${plan.priceARS.toLocaleString('es-AR')} ARS</span>
               </div>
             ) : (
-              <div className="plan-contacto">Consultar precio</div>
+              <Link href={`https://wa.me/+5491164323570?text=Hola,%20estoy%20interesado/a%20por%20el%20plan%20${plan.name}.`} className="plan-contacto" target="_blank">Consultar precio</Link>
             )}
           </div>
         ))}

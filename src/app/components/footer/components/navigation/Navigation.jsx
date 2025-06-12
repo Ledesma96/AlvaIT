@@ -9,15 +9,15 @@ const Navigation = () => {
                 <FiHome />
                 <p>INICIO</p>
             </Link>
-            <Link href='/'>
+            <Link href='/contact'>
                 <FiPhone />
                 <p>CONTACTO</p>
             </Link>
-            <Link href='/'>
+            <Link href='/pricing'>
                 <FiGift />
                 <p>PLANES</p>
             </Link>
-            <Link href='/'>
+            <Link href='/aboutus'>
                 <FiUsers />
                 <p>NOSOTROS</p>
             </Link>

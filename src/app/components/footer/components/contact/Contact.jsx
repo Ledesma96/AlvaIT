@@ -5,11 +5,11 @@ const Contact = () => {
     return (
         <section>
             <h4>Contactanos</h4>
-            <Link href='/'>
+            <Link href="tel:+5491164323570" target="_blank">
                 <FaPhoneAlt />
                 <p>+941164323570</p>
             </Link>
-            <Link href='/'>
+            <Link href="mailto:Grupoalvait@gmail.com" target="_blank">
                 <MdOutlineEmail />
                 <p>Grupoalvait@gmail.com</p>
             </Link>
