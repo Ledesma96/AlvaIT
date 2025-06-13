@@ -1,5 +1,4 @@
-import { Banner, CallToAction, Service, Slider, WhyChooseUs } from './components'
-
+import { Banner, CallToAction, Service, Slider, WhyChooseUs } from './components';
 const HomePage = () => {
     return (
         <>

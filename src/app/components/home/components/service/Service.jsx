@@ -6,13 +6,13 @@ const Service = () => {
         <main className="home-main">
             <h2>S<span>ervicios</span></h2>
             <div>
-                <Link href='/services/web-development'>
+                <Link href='/services/web-design'>
                     <Image src='/servicios-diseno-web-ui-ux-programacion.png' width={80} height={80} alt="Logo diseño ux/ui"/>
                     <h3>Diseño web</h3>
                     <p>Creamos interfaces modernas, intuitivas y responsivas que conectan con tus usuarios y potencian tu presencia digital desde el primer clic.</p>
                 </Link>
-                <Link href='/services/web-design'>
-                    <Image src='/3476582.png' width={80} height={80} alt="Logo diseño ux/ui"/>
+                <Link href='/services/web-development'>
+                    <Image src='/3476582.png' width={80} height={80} alt="Logo desarrollo web"/>
                     <h3>Desarrollo web</h3>
                     <p>Desarrollamos sitios web rápidos, seguros y escalables con tecnologías modernas que garantizan rendimiento y facilidad de mantenimiento.</p>
                 </Link>
